@@ -32,7 +32,7 @@ resource "aws_db_instance" "db_instance" {
   engine_version         = "8.0.31"
   multi_az               = false
   identifier             = "dev-rds-instance"
-  instance_class         = db.t2.micro
+  instance_class         = "db.t2.micro"
   allocated_storage      = 200
   db_subnet_group_name   = aws_db_subnet_group.database_subnet_group.name
   vpc_security_group_ids = [var.database_security_group_id]
