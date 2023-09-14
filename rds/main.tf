@@ -36,7 +36,7 @@ resource "aws_db_instance" "db_instance" {
   allocated_storage      = 200
   db_subnet_group_name   = aws_db_subnet_group.database_subnet_group.name
   vpc_security_group_ids = [var.database_security_group_id]
-  availability_zone      = data.aws_availability_zones.available_zones.names[0]
+  availability_zone      = "us-east-1b"
   db_name                = "applicationdb"
   username               = "laurenj"
   password               = "test0042"
