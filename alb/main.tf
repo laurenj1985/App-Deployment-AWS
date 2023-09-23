@@ -17,7 +17,7 @@ resource "aws_lb_target_group" "alb_target_group" {
   name        = "${var.project_name}-${var.environment}-tg"
   target_type = var.target_type
   port        = 80
-  protocol    = HTTP
+  protocol    = "HTTP"
   vpc_id      = var.vpc_id
 
   health_check {
@@ -53,7 +53,7 @@ resource "aws_lb_listener" "alb_http_listener" {
 resource "aws_lb_listener" "alb_https_listener" {
   load_balancer_arn = aws_lb.application_load_balancer.arn
   port              = 443
-  protocol          = HTTPS
+  protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
   certificate_arn   = var.certificate_arn
 
